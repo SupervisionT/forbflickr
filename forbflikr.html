@@ -1,0 +1,52 @@
+<html>
+<style>
+  img {
+    max-height: 125px;
+    margin: 3px;
+    border: 1px solid #dedede;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    opacity: 0.5;
+    display: block;
+    z-index: 1001;
+  }
+
+  .overlay-message {
+    width: 40em;
+    height: 25em;
+    background-color: #fff;
+    border: 1px solid #000;
+    opacity: 1;
+    z-index: 1002;
+    box-sizing: border-box;
+    padding: 100px 50px;
+  }
+</style>
+
+<body>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
+
+  <div class="container">
+    <nav aria-label="Page navigation">
+      <ul class="pagination" id="pagination"></ul>
+    </nav>
+  </div>
+  <div class="overlay" style="display: none;"></div>
+  <div class="overlay-message" style="display: none;">
+  </div>
+  <div id="flickr" />
+
+  <script src="flickr.js" type="text/javascript"></script>
+</body>
+
+</html>
