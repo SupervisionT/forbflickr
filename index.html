@@ -37,15 +37,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
 
   <div class="container">
-    <nav aria-label="Page navigation">
-      <div>
-        <div class="form-group">
-          <input type="text" class="textInput" value="flower">
+    <br />
+    <div>
+      <nav aria-label="Page navigation">
+        <div>
+          <div class="form-group">
+            <input type="text" class="textInput" value="flower">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-      <ul class="pagination" id="pagination"></ul>
-    </nav>
+      </nav>
+    </div>
+    <ul class="pagination" id="pagination"></ul>
     <div id="flickr" /></div>
   <div class="overlay" style="display: none;"></div>
   <div class="overlay-message" style="display: none;">
@@ -55,7 +58,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112487524-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-112487524-1');

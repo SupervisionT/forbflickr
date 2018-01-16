@@ -3,7 +3,7 @@ $(function() {
     totalPages: 35,
     visiblePages: 10,
     onPageClick: function(event, page) {
-      var tags = $('.textInput').val()
+      var tags = $('.textInput').val();
       if (tags.length != 0)
       render(page, tags);
     }
