@@ -61,7 +61,7 @@ function render(pageNo, tag) {
         }
       })
     })
-    $(".overlay").click(function() {
+    $(".overlay, .overlay-message").click(function() {
       $(".overlay, .overlay-message").hide();
     });
   });
