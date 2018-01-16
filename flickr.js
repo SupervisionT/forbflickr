@@ -3,17 +3,30 @@ $(function() {
     totalPages: 35,
     visiblePages: 10,
     onPageClick: function(event, page) {
-      render(page);
+      var tags = $('.textInput').val()
+      if (tags.length != 0)
+      render(page, tags);
     }
   })
 });
 
-function render(pageNo) {
+$('.btn').on('click', function() {
+  $('#pagination').twbsPagination('show', 1);
+})
+
+$(document).keypress(function(e) {
+  if (e.which == 13) {
+    $('#pagination').twbsPagination('show', 1);
+  }
+});
+
+function render(pageNo, tag) {
   $("img").remove();
   var ajaxSettings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=fde64ed7cc4357b0379522e6eb3bc647&tags=flower&page=" +
+    "url": "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=fde64ed7cc4357b0379522e6eb3bc647&tags=" +
+      tag + "&page=" +
       pageNo + "&per_page=10&format=json&nojsoncallback=1",
     "method": "GET",
     "headers": {}
@@ -24,10 +37,12 @@ function render(pageNo) {
         serverId = gp.server,
         id = gp.id,
         secret = gp.secret;
-      $("#flickr").append('<img class=imgx src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/>');
-
+      $("#flickr").append('<img class=imgx src="https://farm' +
+        farmId + '.staticflickr.com/' +
+        serverId + '/' +
+        id + '_' +
+        secret + '.jpg"/>');
     });
-    // $(".overlay, .overlay-message").hide();
     $('.imgx').on('click', function(e) {
       $(".overlay, .overlay-message").show();
       $('.overlay-message').css({
