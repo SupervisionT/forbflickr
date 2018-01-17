@@ -28,6 +28,11 @@
     box-sizing: border-box;
     padding: 100px 50px;
   }
+
+  .box2 {
+    display: inline-block;
+    margin: 1em;
+  }
 </style>
 
 <body>
@@ -38,21 +43,22 @@
 
   <div class="container">
     <br />
-    <div>
-      <nav aria-label="Page navigation">
-        <div>
-          <div class="form-group">
-            <input type="text" class="textInput" value="flower">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="input-group">
+          <input type="text" class="form-control textInput" value="flower" placeholder="Search for...">
+          <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
         </div>
-      </nav>
+        <!-- /input-group -->
+        <ul class="pagination" id="pagination"></ul>
+      </div>
+      <!-- /.col-lg-6 -->
     </div>
-    <ul class="pagination" id="pagination"></ul>
     <div id="flickr" /></div>
   <div class="overlay" style="display: none;"></div>
-  <div class="overlay-message" style="display: none;">
-  </div>
+  <div class="overlay-message" style="display: none;"></div>
   </div>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112487524-1"></script>
