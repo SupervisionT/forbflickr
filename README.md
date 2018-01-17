@@ -1,6 +1,6 @@
 # forbflickr
 
-You can test a live version from here:
+You can test a live demo from here:
 https://supervisiont.github.io/forbflickr/
 
 ForbFlickr is an application that list a group of photos pulled from Flickr.com
